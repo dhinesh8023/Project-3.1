@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback — Bloom & Vows</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="index.html">Bloom & Vows</a>
+        <nav class="nav" aria-label="Main">
+          <a href="index.html">Home</a>
+          <a href="cart.html">Cart</a>
+          <a href="order.html">Order</a>
+          <a href="feedback.html" class="is-active">Feedback</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="page-title" id="feedback-form">Feedback &amp; contact</h1>
+      <p class="page-sub">Tell us about your experience or ask a question. We read every message.</p>
+
+      <form class="form-panel" id="feedback-form-el" novalidate>
+        <div class="form-group">
+          <label for="fb-name">Your name</label>
+          <input id="fb-name" name="name" type="text" required autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="fb-email">Email (optional)</label>
+          <input id="fb-email" name="email" type="email" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="fb-message">Message</label>
+          <textarea id="fb-message" name="message" required placeholder="How can we help?"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary">Send feedback</button>
+      </form>
+
+      <p id="feedback-thanks" class="form-panel" style="margin-top: 1rem; display: none" role="status">
+        Thank you — we appreciate your feedback and will get back to you if needed.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <p>Bloom & Vows Wedding Planners — crafted with care.</p>
+      <p class="site-footer__copy">&copy; 2026 Bloom &amp; Vows. All rights reserved.</p>
+    </footer>
+
+    <script src="js/feedback-store.js"></script>
+    <script src="js/feedback.js"></script>
+  </body>
+</html>

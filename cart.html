@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart — Bloom & Vows</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="index.html">Bloom & Vows</a>
+        <nav class="nav" aria-label="Main">
+          <a href="index.html">Home</a>
+          <a href="cart.html" class="is-active">Cart</a>
+          <a href="order.html">Order</a>
+          <a href="feedback.html">Feedback</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="page-title">Your cart</h1>
+      <p class="page-sub">Update quantities or remove items. When you are ready, place your order.</p>
+
+      <div id="cart-root"></div>
+
+      <div class="cart-actions" id="cart-actions" hidden>
+        <a class="btn btn--primary btn--block" href="order.html">Order</a>
+        <div>
+          <p class="page-sub" style="margin-bottom: 0.5rem">Connect with us</p>
+          <div class="social-row">
+            <a
+              class="social-btn social-btn--wa"
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              >WhatsApp</a
+            >
+            <a
+              class="social-btn social-btn--ig"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>Bloom & Vows Wedding Planners — crafted with care.</p>
+      <p class="site-footer__copy">&copy; 2026 Bloom &amp; Vows. All rights reserved.</p>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script src="js/cart-page.js"></script>
+  </body>
+</html>

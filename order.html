@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Place order — Bloom & Vows</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="index.html">Bloom & Vows</a>
+        <nav class="nav" aria-label="Main">
+          <a href="index.html">Home</a>
+          <a href="cart.html">Cart</a>
+          <a href="order.html" class="is-active">Order</a>
+          <a href="feedback.html">Feedback</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="page-title">Complete your order</h1>
+      <p class="page-sub">Fill in your details and choose how you would like to pay.</p>
+
+      <div class="order-layout">
+        <div>
+          <form class="form-panel" id="order-form" novalidate>
+            <div class="form-group">
+              <label for="cust-name">Full name</label>
+              <input id="cust-name" name="name" type="text" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="cust-phone">Phone</label>
+              <input id="cust-phone" name="phone" type="tel" required autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="cust-email">Email</label>
+              <input id="cust-email" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="cust-address">Event address / notes</label>
+              <textarea id="cust-address" name="address" required placeholder="Venue name, city, special requests"></textarea>
+            </div>
+
+            <fieldset class="payment-options">
+              <legend>Payment method</legend>
+              <div class="radio-row">
+                <label class="radio-label">
+                  <input type="radio" name="payment" value="gpay" id="pay-gpay" />
+                  G-pay
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="payment" value="cash" id="pay-cash" />
+                  Cash
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="qr-block is-hidden" id="qr-block">
+              <p style="margin:0 0 0.75rem;font-size:0.9rem;color:var(--text-muted)">
+                Scan with Google Pay or any UPI app (replace QR with your own in production).
+              </p>
+              <img
+                id="gpay-qr"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi%3A%2F%2Fpay%3Fpa%3Dyourname%40upi%26pn%3DBloomVows"
+                width="200"
+                height="200"
+                alt="UPI QR code placeholder"
+              />
+            </div>
+            <p class="cash-note is-hidden" id="cash-note">
+              You selected cash. Our team will confirm payment collection (on delivery or at the venue) when they call you.
+            </p>
+
+            <button type="submit" class="btn btn--primary btn--block" style="margin-top: 1rem">
+              Submit order
+            </button>
+          </form>
+        </div>
+
+        <aside class="order-summary-card" aria-labelledby="order-sum-heading">
+          <h3 id="order-sum-heading">Order summary</h3>
+          <ul id="order-summary-list"></ul>
+          <p style="margin:0.75rem 0 0;font-weight:700;color:var(--pink-900)" id="order-summary-total"></p>
+          <p class="order-monthly" id="order-monthly-line"></p>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>Bloom & Vows Wedding Planners — crafted with care.</p>
+      <p class="site-footer__copy">&copy; 2026 Bloom &amp; Vows. All rights reserved.</p>
+    </footer>
+
+    <div class="modal-backdrop" id="thank-modal" role="dialog" aria-modal="true" aria-labelledby="thank-title" aria-hidden="true">
+      <div class="modal">
+        <h2 id="thank-title">Thank you for your order</h2>
+        <p>We have received your details. Our planner will contact you shortly to confirm.</p>
+        <button type="button" class="btn btn--primary" id="thank-close">Close</button>
+      </div>
+    </div>
+
+    <script src="js/cart.js"></script>
+    <script src="js/order.js"></script>
+  </body>
+</html>
